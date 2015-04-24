@@ -1,0 +1,7 @@
+---
+ansible_ssh_user: core
+ansible_python_interpreter: "/opt/bin/python"
+
+# Local Variables:
+# mode: yaml
+# End:
