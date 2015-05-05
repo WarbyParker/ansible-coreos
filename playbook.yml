@@ -1,3 +1,10 @@
 - hosts: coreos
+  gather_facts: no
+  sudo: true
+  tasks:
+    - raw: mkdir -p /opt/bin
+    - raw: echo -e '#!/usr/bin/bash\ntoolbox -q --bind=/home:/home python "$@"' > /opt/bin/python
+    - raw: chmod 755 /opt/bin/python
+- hosts: coreos
   tasks:
     - coreos:
