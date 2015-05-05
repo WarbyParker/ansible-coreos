@@ -1,3 +1,6 @@
 [submodule "ansible-modules-extras"]
 	path = ansible-modules-extras
 	url = git@github.com:joetastic/ansible-modules-extras.git
+[submodule "coreos-vagrant"]
+	path = coreos-vagrant
+	url = https://github.com/coreos/coreos-vagrant.git
