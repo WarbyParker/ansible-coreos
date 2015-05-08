@@ -2,9 +2,15 @@
   gather_facts: no
   sudo: true
   tasks:
+    - raw: '[ -x /opt/bin/python ]'
+      ignore_errors: True
+      register: has_python
     - raw: mkdir -p /opt/bin
+      when: has_python|failed
     - raw: echo -e '#!/usr/bin/bash\ntoolbox -q --bind=/home:/home python "$@"' > /opt/bin/python
+      when: has_python|failed
     - raw: chmod 755 /opt/bin/python
+      when: has_python|failed
 - hosts: coreos
   tasks:
     - coreos:
