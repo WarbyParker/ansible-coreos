@@ -1,6 +1,8 @@
 # -*- mode: ruby -*-
 # # vi: set ft=ruby :
 
+# ripped from https://github.com/coreos/coreos-vagrant
+
 require 'fileutils'
 
 Vagrant.require_version ">= 1.6.0"
